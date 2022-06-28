@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Connection settings -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres?currentSchema=tickets</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">Astra76</property>
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <!-- Print executed SQL to stdout -->
+        <property name="show_sql">false</property>
+        <property name="hibernate.generate_statistics">false</property>
+        <!-- Update database on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!-- Annotated entity classes -->
+        <mapping class="ServerTickets.entities.Place"/>
+        <mapping class="ServerTickets.entities.TicketsBuyer"/>
+        <mapping class="ServerTickets.entities.Customer"/>
+        <mapping class="ServerTickets.entities.Event"/>
+        <mapping class="ServerTickets.entities.EventPlaceSeatsPrice"/>
+        <mapping class="ServerTickets.entities.Messages"/>
+        <mapping class="ServerTickets.entities.PlaceSeats"/>
+        <mapping class="ServerTickets.entities.EventDistributor"/>
+        <mapping class="ServerTickets.entities.TicketsBuyer"/>
+        <mapping class="ServerTickets.entities.Sales"/>
+    </session-factory>
+</hibernate-configuration>
